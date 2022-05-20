@@ -1,3 +1,5 @@
+package Semestre_III.LPOO.Aula2_0605.ExerciciosCaderno.Exercicio2;
+
 import java.util.Scanner;
 
 public class Imc {

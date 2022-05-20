@@ -1,4 +1,3 @@
-package ExerciciosLab.Exercicio1;
 
 public class Motorista {
     private String nome;

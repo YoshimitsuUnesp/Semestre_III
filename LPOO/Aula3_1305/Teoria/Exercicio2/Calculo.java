@@ -1,4 +1,4 @@
-package Teoria.Exercicio2;
+
 public class Calculo {
     public int soma(int a, int b) {
         return a + b;

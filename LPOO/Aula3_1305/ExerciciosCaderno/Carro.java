@@ -1,4 +1,3 @@
-package ExerciciosCaderno;
 
 public class Carro {
     private String nome;
