@@ -17,4 +17,11 @@ public class Aluno {
 
     public int getSemestre() { return this.semestre; }
     public void setSemestre(int semestre) { this.semestre = semestre; }
+
+    public Aluno(String nome, String curso, int id, int semestre){
+        this.nome = nome;
+        this.curso = curso;
+        this.id = id;
+        this.semestre = semestre;
+    }
 }
