@@ -5,7 +5,7 @@ public class Rotas {
     private Hora horaSaida;
     private Hora horaChegada;
 
-    // Construtor
+    // Construtores
     public Rotas(String origem, String parada, String destino, Hora horaSaida, Hora horaChegada) {
         this.origem = origem;
         this.parada = parada;
@@ -13,6 +13,8 @@ public class Rotas {
         this.horaSaida = horaSaida;
         this.horaChegada = horaChegada;
     }
+
+    // Exercicio: fazer o construtor Rotas()
 
     // Getters e setters
     public String getOrigem() { return origem; }

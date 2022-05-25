@@ -5,7 +5,7 @@ public class Onibus {
     private int km;
     private int[][] localAssento; // Trabalho pede localAssento como matriz
     
-    // Construtor
+    // Construtores
     public Onibus(String modelo, Data anoFabricacao, String marca, int km, int[][] localAssento) {
         this.modelo = modelo;
         this.anoFabricacao = anoFabricacao;
@@ -13,6 +13,8 @@ public class Onibus {
         this.km = km;
         this.localAssento = localAssento;
     }
+
+    // Exercicio: fazer o construtor Onibus()
 
     // Getters e setters
     public String getModelo() { return modelo; }

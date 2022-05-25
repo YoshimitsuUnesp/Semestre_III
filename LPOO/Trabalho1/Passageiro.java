@@ -5,13 +5,15 @@ public class Passageiro {
     private String endereco; // Se sobrar tempo, implementar classe Endereco
 
 
-    //Construtor
+    //Construtores
     public Passageiro(String documentoId, String nome, Data dataNasc, String endereco) {
         this.documentoId = documentoId;
         this.nome = nome;
         this.dataNasc = dataNasc;
         this.endereco = endereco;
     }
+
+    // Exercicio: fazer o construtor Passageiro()
 
     // Getters e Setters
     public String getdocumentoId() { return documentoId; }

@@ -1,13 +1,17 @@
 public class Motorista {
-    private String numCnh;
+    private String numCnh; // Esta como String por ter 12 digitos
     private Data dataAdmissao;
     private String nome;
 
-    // Construtor
+    // Construtores
     public Motorista(String numCnh, Data dataAdmissao, String nome) {
         this.numCnh = numCnh;
         this.dataAdmissao = dataAdmissao;
         this.nome = nome;
+    }
+
+    public Motorista(){
+        this(null, null, null);
     }
 
     // Getters e setters
