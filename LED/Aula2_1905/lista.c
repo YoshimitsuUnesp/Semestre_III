@@ -36,7 +36,8 @@ typedef struct
 
 boolean Vazia(lista *L){
     // Retorna true (1): se vazio, false(0), caso contrario
-    return (L->nelem == 0)}
+    return (L->nelem == 0);
+    }
 
 boolean Cheia(lista *L)
 {
@@ -83,7 +84,7 @@ boolean Inserir_posic(tipo_elem x, int p, lista *L)
     }
 }
 
-boolean Buscar(tipo_chave x, Lista *L, int *p)
+boolean Buscar(tipo_chave x, lista *L, int *p)
 {
     /* Retorna true, se x ocorre na posicao p. Se x ocorre
     mais de uma vez, retorna a posicao da primeira ocorrencia
@@ -125,7 +126,7 @@ void Impr_elem(tipo_elem x)
 void Imprimir(lista *L)
 {
     // Imprime os elementos na sua ordem de precedencia
-    it i;
+    int i;
     if (!Vazia(L))
         for (i = 1; i <= L->nelem; i++)
             Impr_elem(L->A[i]);
@@ -158,4 +159,75 @@ boolean Inserir_ord(tipo_elem x, lista *L)
         }
         return Inserir_posic(x, i, L); // i = nelem
     }
+}
+
+boolean Buscar_ord(tipo_chave x, lista *L, int *p)
+{
+    /* Retorna true se x ocorre na posicao p. Se x ocorre
+    mais de uma vez, retorna a posicao da primeira
+    ocorrencia. Se x nao ocorre, retorna false
+    OBS: Para listas ORDENADAS */
+
+    // Implementacao de busca linear simples
+    if (!Vazia(L))
+    {
+        int i = 1;
+        while (i <= L->nelem)
+            if (L->A[i].chave >= x)
+                if (L->A[i].chave == x)
+                {
+                    *p = i;
+                    return TRUE;
+                }
+                else
+                    return FALSE; // Encontrou maior, entao
+            else
+                i++;
+    }
+    return FALSE; // Nao encontrou
+}
+
+boolean Busca_bin(tipo_chave x, lista *L, int *p)
+{
+    /* Retorna em p a posicao de x na lista ORDENADA e true
+    Se x nao ocorre, retorna false */
+
+    // Implementacao da busca binaria
+    int inf = 1;
+    int sup = L->nelem;
+    int meio;
+
+    while (sup >= inf)
+    {
+        meio = (inf + sup) / 2;
+        if (L->A[meio].chave == x)
+        {
+            *p = meio;
+            return TRUE; // Sai da busca
+        }
+        else
+        {
+            if (L->A[meio].chave < x)
+                inf = meio++;
+            else
+                sup = meio--;
+        }
+    }
+    return FALSE;
+}
+
+boolean Remover_ch(tipo_chave x, lista *L)
+{
+    /* Remocao dada a chave. Retorna true, se removeu,
+    ou false, caso contrario */
+
+    int *p;
+    boolean removeu = FALSE;
+
+    if (Busca_bin(x, L, p)) // Procura via busca binaria
+    {
+        Remover_posic(p, L);
+        removeu = TRUE;
+    }
+    return removeu;
 }
