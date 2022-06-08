@@ -8,9 +8,14 @@ int main()
     int op;
     Lista personagens;
 
+    printf("CRIAR PERSONAGEM\n");
+    printf("Nome: ");
     scanf("%s", personagens.A->info.nome);
-    printf("%s\n", personagens.A->info.nome);
-    
+    printf("Arma: ");
+    scanf("%s", personagens.A->info.arma);
+    printf("Quantidade de dano: ");
+    scanf("%d", personagens.A->info.qtdDano);
+
     // printf("------------------------------\n"
     //        "|        MENU DE OPCOES      |\n"
     //        "------------------------------\n"

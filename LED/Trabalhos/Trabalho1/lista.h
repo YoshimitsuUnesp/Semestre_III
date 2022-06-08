@@ -15,7 +15,7 @@ typedef struct
 {
     char nome[30];
     char arma[20];
-    int qtdVida;
+    int qtdDano;
 } Dado;
 
 // Tipo elemento (registro + chave)
