@@ -1,0 +1,45 @@
+#define TRUE 1
+#define FALSE 0
+#define boolean int  // Tipo booleano
+#define tam_fila 100 // Tamanho maximo da fila
+#define indice int   // Tipo indice
+
+// Estruturas
+// ------------------------------------
+typedef struct
+{
+    int A[tam_fila]; 
+    indice inicio, fim;
+} fila;
+
+// Declaracao das operacoes
+// ------------------------------------
+// Cria fila vazia
+void Definir(fila *q);
+
+// Checa se fila esta vazia
+boolean Vazia(fila *q);
+
+// Checa se a fila esta cheia
+boolean Cheia(fila *q);
+
+// Adiciona um elemento no fim da fila
+boolean Inserir(fila *q, int elem);
+
+// Remove o elemento do inicio da fila
+boolean Remover(fila *q, int *elem);
+
+// Retorna o tamanho da fila
+int Tamanho(fila *q);
+
+// Mostra o comeco da fila sem remover o elemento
+boolean Inicio_fila(fila *q, int elem);
+
+// Imprime a fila completa
+void Imprimir(fila *q);
+
+// Imprime o elemento (idade)
+void ImprimirElem(int elem);
+
+// Chama o proximo da fila
+void Chamar(fila *comum, fila *preferencial);

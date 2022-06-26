@@ -1,4 +1,4 @@
-//TAD: matriz real m x n
+//TAD: lista seq.
 
 #define MAX 100 // Estimativa do tamanho maximo da Lista
 #define TRUE 1  // Define um tipo booleano
@@ -8,44 +8,46 @@
 //-----------------------------
 // Estruturas
 // Tipo chave
-typedef int Chave;
+typedef int tipo_chave; 
 
-// Tipo registro
+//Tipo registro
 typedef struct
 {
-    char nome[30];
-    char arma[20];
-    int qtdDano;
-} Dado;
+   char nome[30];
+   char arma[15];
+   int qtd_dano;
+} tipo_dado;
 
-// Tipo elemento (registro + chave)
+//Tipo elemento (registro + chave)
 typedef struct
 {
-    Chave chave;
-    Dado info;
-} Elemento;
+   tipo_chave chave;
+   tipo_dado info;
+} tipo_elem;
 
-// Tipo Lista (sequencial)
+//Tipo lista (sequencial)
 typedef struct
 {
-    int numElem; // Numero de elementos
-    Elemento A[MAX + 1];
-} Lista;
+   int nelem; // Numero de elementos
+   tipo_elem A[MAX+1];
+} lista;
+//-------------------------------------------
 
 
 //-----------------------------
 // Funcoes
-void definir(Lista *lista);
-boolean vazia(Lista *lista);
-boolean cheia(Lista *lista);
-void apagar(Lista *lista);
-int tamanho(Lista *lista);
-boolean inserirOrd(Elemento x, Lista *lista);
-boolean inserirPosic(Elemento x, int p, Lista *lista);
-void imprimir(Lista *lista);
-void imprimirElem(Elemento x);
-boolean buscar(Chave x, Lista *lista, int *p);
-boolean buscarOrd(Chave x, Lista *lista, int *p);
-boolean buscaBin(Chave x, Lista *lista, int *p);
-boolean removerCh(Chave x, Lista *lista);
-void removerPosic(int *p, Lista *lista);
+boolean Vazia(lista *L);
+boolean Cheia(lista *L);
+void Definir(lista *L);
+void Apagar(lista *L);
+boolean Inserir_posic(tipo_elem x, int p, lista *L);
+boolean Inserir_ord(tipo_elem x, lista *L);
+boolean Buscar(tipo_chave x, lista *L, int *p);
+boolean Buscar_ord(tipo_chave x, lista *L, int *p);
+boolean Busca_bin(tipo_chave x, lista *L, int *p);
+void Remover_posic(int *p, lista *L);
+boolean Remover_ch(tipo_chave x, lista *L);
+void Impr_elem(tipo_elem t);
+void Imprimir(lista *L);
+int Tamanho(lista *L);
+
